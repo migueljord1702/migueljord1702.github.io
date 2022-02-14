@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aframe VR</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <style>
+    #song_1 {
+      position: fixed;
+      width: 400px;
+      height: 695px;
+      top: 10px;
+      left:10px;
+      display:none;
+      background-image: url('song1.png');
+      background-size:contain;
+      background-repeat: no-repeat;
+    }
+
+    #song_2 {
+      position: fixed;
+      width: 400px;
+      height: 695px;
+      top: 10px;
+      left:10px;
+      display:none;
+      background-image: url('song2.png');
+      background-size:contain;
+      background-repeat: no-repeat;
+    }
+
+    #song_3 {
+      position: fixed;
+      width: 400px;
+      height: 695px;
+      top: 10px;
+      left:10px;
+      display:none;
+      background-image: url('song3.png');
+      background-size:contain;
+      background-repeat: no-repeat;
+    }
+
+    #song_4 {
+      position: fixed;
+      width: 400px;
+      height: 695px;
+      top: 10px;
+      left:10px;
+      display:none;
+      background-image: url('song4.png');
+      background-size:contain;
+      background-repeat: no-repeat;
+    }
+
+    .close_button {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: transparent;
+      top: 0px;
+      left: 0px;
+      display: block;
+    }
+
+    .play_button {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      bottom: 0px;
+      left: 100px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<audio id="song_1_audio">
+  <source src="song1.mp3" type="audio/mpeg">
+  <source src="song1.ogg" type="audio/ogg">
+</audio>
+
+<audio id="song_2_audio">
+  <source src="song2.mp3" type="audio/mpeg">
+  <source src="song2.ogg" type="audio/ogg">
+</audio>
+
+<audio id="song_3_audio">
+  <source src="song3.mp3" type="audio/mpeg">
+  <source src="song3.ogg" type="audio/ogg">
+</audio>
+
+<audio id="song_4_audio">
+  <source src="song4.mp3" type="audio/mpeg">
+  <source src="song4.ogg" type="audio/ogg">
+</audio>
+
+
+<a-scene>
+  <a-entity camera position="0 0 0" look-controls wasd-controls>
+    <a-cursor fuse="true" fuseTimeout="500" ></a-cursor>
+  </a-entity>
+
+  <a-box id="front_wall" material="src: walls2.png;  shader:  flat"  position="0 0 -40" width="80" height="50" depth="5"> </a-box>
+  <a-box id="rear_wall" material="src: walls2.png" position="0 0 40" width="80" height="50" depth="5"> </a-box>
+  <a-box id="right_wall" material="src: walls2.png" position="40 0 0" width="2" height="50" depth="80"> </a-box>
+  <a-box id="left_wall" material="src: walls2.png" position="-40 0 0" width="2" height="50" depth="80"> </a-box>
+  <a-box id="bottom_wall" material="src: tiles4.jpeg;  shader:  flat" position="0 -13 0" width="80" height="5" depth="80"> </a-box>
+  <!-- <a-box id="top_wall" material="src: brick1.jpeg"" position="0 40 0" width="80" height="5" depth="80"> </a-box> -->
+
+  <a-box id="top_shelf" material="src: wood1.jpeg" position="-39 10 0" width="4" height="1" depth="40"> </a-box>
+  <a-box id="bottom_shelf" material="src: wood1.jpeg" position="-39 0 0" width="4" height="1" depth="40"> </a-box>
+
+  <a-plane id="album1" src="album1.jpeg" height="8" width="8" rotation="0 90 0" position="-38.5 4.5 7.5"></a-plane>
+  <a-plane id="album2" src="album2.jpeg" height="8" width="8" rotation="0 90 0" position="-38.5 4.5 -7.5"></a-plane>
+  <a-plane id="album3" src="album3.jpeg" height="8" width="8" rotation="0 90 0" position="-38.5 14.25 7.5"></a-plane>
+  <a-plane id="album4" src="album4.jpeg" height="8" width="8" rotation="0 90 0" position="-38.5 14.25 -7.5"></a-plane>
+  <a-plane id="poster4" src="poster4.jpeg" height="18" width="15" rotation="0 0 0" position="-25 13 -37.4"></a-plane>
+  <a-plane id="poster2" src="poster2.jpeg" height="18" width="15" rotation="0 0 0" position="0 13 -37.4"></a-plane>
+  <a-plane id="poster3" src="poster3.png" height="18" width="15" rotation="0 0 0" position="25 13 -37.4"></a-plane>
+  <a-plane id="poster1" src="poster1.jpeg" height="18" width="15" rotation="0 -90 0" position="38.9 13 0"></a-plane>
+  <a-plane id="poster5" src="poster5.jpeg" height="18" width="15" rotation="0 -90 0" position="38.9 13 20"></a-plane>
+  <a-plane id="poster6" src="poster6.png" height="18" width="15" rotation="0 -90 0" position="38.9 13 -20"></a-plane>
+  <a-plane id="poster7" src="poster7.jpeg" height="18" width="15" rotation="0 180 0" position="-25 12 37.4"></a-plane>
+  <a-plane id="poster8" src="poster8.jpeg" height="18" width="15" rotation="0 180 0" position="25 12 37.4"></a-plane>
+
+  <a-entity id="counter" gltf-model="counter/scene.gltf" position="0 -20 -25" rotation="0 90 0" scale="0.15 0.3 0.4"></a-entity>
+  <a-entity id="cashier" gltf-model="cashier/scene.gltf" position="-25 -6 -25" rotation="0 -180 0" scale="150 150 150"></a-entity>
+  <a-entity id="guitar1" gltf-model="guitar/scene.gltf" position="35 -23 10" rotation="0 0 0" scale="20 20 20"></a-entity>
+  <a-entity id="amplifier1" gltf-model="guitar_amplifier/scene.gltf" position="35 -10 13" rotation="0 -90 0" scale="0.5 0.5 0.5"></a-entity>
+  <a-entity id="guitar2" gltf-model="guitar/scene.gltf" position="35 -23 -10" rotation="0 0 0" scale="20 20 20"></a-entity>
+  <a-entity id="amplifier2" gltf-model="guitar_amplifier/scene.gltf" position="35 -10 -7" rotation="0 -90 0" scale="0.5 0.5 0.5"></a-entity>
+  <a-entity id="door1" gltf-model="hospital_door/scene.gltf" position="14.5 -10 37" rotation="0 0 0" scale="0.02 0.02 0.02"></a-entity>
+  <a-entity id="door2" gltf-model="hospital_door/scene.gltf" position="-14 -10 37" rotation="0 180 0" scale="0.02 0.02 0.02"></a-entity>
+</a-scene>
+
+<div id="song_1">
+  <div class="close_button" onclick="song_1_close()"></div>
+  <div class="play_button" onclick="song_1_play()"></div>
+</div>
+
+<div id="song_2">
+  <div class="close_button" onclick="song_2_close()"></div>
+  <div class="play_button" onclick="song_2_play()"></div>
+</div>
+
+<div id="song_3">
+  <div class="close_button" onclick="song_3_close()"></div>
+  <div class="play_button" onclick="song_3_play()"></div>
+</div>
+
+<div id="song_4">
+  <div class="close_button" onclick="song_4_close()"></div>
+  <div class="play_button" onclick="song_4_play()"></div>
+</div>
+
+<script>
+
+var album1 = document.querySelector('#album1');
+var song_1_audio = document.querySelector('#song_1_audio');
+
+  album1.addEventListener('fusing', function(evt) { 
+    //evt.target.setAttribute('color', 'purple');
+    document.getElementById('song_1').style.display = "block";
+  });
+
+  function song_1_play() {
+    song_1_audio.play();
+  }
+
+  function song_1_close() {
+    song_1_audio.pause();
+    document.getElementById('song_1').style.display = "none";
+  }
+
+////////////
+
+var album2 = document.querySelector('#album2');
+var song_2_audio = document.querySelector('#song_2_audio');
+
+  album2.addEventListener('fusing', function(evt) { 
+    //evt.target.setAttribute('color', 'purple');
+    document.getElementById('song_2').style.display = "block";
+  });
+
+  function song_2_play() {
+    song_2_audio.play();
+  }
+
+  function song_2_close() {
+    song_2_audio.pause();
+    document.getElementById('song_2').style.display = "none";
+  }
+
+////////////
+
+var album3 = document.querySelector('#album3');
+var song_3_audio = document.querySelector('#song_3_audio');
+
+  album3.addEventListener('fusing', function(evt) { 
+    //evt.target.setAttribute('color', 'purple');
+    document.getElementById('song_3').style.display = "block";
+  });
+
+  function song_3_play() {
+    song_3_audio.play();
+  }
+
+  function song_3_close() {
+    song_3_audio.pause();
+    document.getElementById('song_3').style.display = "none";
+  }
+
+////////////
+
+var album4 = document.querySelector('#album4');
+var song_4_audio = document.querySelector('#song_4_audio');
+
+  album4.addEventListener('fusing', function(evt) { 
+    //evt.target.setAttribute('color', 'purple');
+    document.getElementById('song_4').style.display = "block";
+  });
+
+  function song_4_play() {
+    song_4_audio.play();
+  }
+
+  function song_4_close() {
+    song_4_audio.pause();
+    document.getElementById('song_4').style.display = "none";
+  }
+
+////////////
+</script>
+</body>
+</html>
