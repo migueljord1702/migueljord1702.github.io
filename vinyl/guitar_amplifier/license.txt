@@ -1,0 +1,11 @@
+Model Information:
+* title:	Guitar Amplifier
+* source:	https://sketchfab.com/3d-models/guitar-amplifier-be36a541b49e4187966ba83a50a24138
+* author:	thesidekick (https://sketchfab.com/thesidekick)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Guitar Amplifier" (https://sketchfab.com/3d-models/guitar-amplifier-be36a541b49e4187966ba83a50a24138) by thesidekick (https://sketchfab.com/thesidekick) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
