@@ -71,19 +71,11 @@
         z-index: 999;
       }
 
-      #flower1 {
+      #border1 {
         position: absolute;
         top: 10%;
         left: 10%;
         width: 20%;
-        z-index: 999;
-      }
-      
-       #flower2 {
-        position: absolute;
-        top: 10%;
-        left: 10%;
-        width: 30%;
         z-index: 999;
       }
 
@@ -107,7 +99,7 @@
 
             setTimeout(function(){ 
               document.getElementById('demon').style.display = "block";
-            }, 20000);
+            }, 5000);
           });
           
           this.el.addEventListener('markerLost', () => {
@@ -139,7 +131,7 @@
     </a-scene>
 
     <div id="show1" class="thisthis">
-      <img id="flower1" src="flower1.jpeg">
+      <img id="border1" src="border1.png">
 
       <img id="demon" src="pop.png">
     </div>
