@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Curve</title>
+    <title>curve2</title>
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 </head>
 <body>
@@ -16,9 +16,23 @@
   <a-box id="left_wall"  material="src: walls2.jpg" position="-50 7 0" width="2" height="50" depth="100"> </a-box>
   <a-box id="bottom_wall"  material="src: tiles7.jpg; shader:  flat" position="0 -20 0" width="100" height="5" depth="100"> </a-box>
 
-  <a-plane id="poster2" src="body2.JPG" height="30" width="60" rotation="0 0 0" position="0 3 -47"></a-plane>
-  <a-plane id="poster3" src="body3.JPG" height="30" width="60" rotation="0 90 0" position="-47 3 0"></a-plane>
-  <a-plane id="poster4" src="body4.JPG" height="30" width="60" rotation="0 -90 0" position="47 3 0"></a-plane>
+  <a-plane id="poster2" src="body2.jpg" height="30" width="60" rotation="0 0 0" position="0 3 -47"></a-plane>
+  <a-plane id="poster3" src="body3.jpg" height="30" width="60" rotation="0 90 0" position="-47 3 0"></a-plane>
+  <a-plane id="poster4" src="body4.jpg" height="30" width="60" rotation="0 -90 0" position="47 3 0"></a-plane>
 
-      </body>
-</html>
+  <a-entity id="door1" gltf-model="hospital_door/scene.gltf" position="21.3 -20 46" rotation="0 0 0" scale="0.03 0.03 0.03"></a-entity>
+  <a-entity id="door2" gltf-model="hospital_door/scene.gltf" position="-21.3 -20 46" rotation="0 180 0" scale="0.03 0.03 0.03"></a-entity>
+
+  <a-box id="button2"  material="color: red" position="26 -2 47" width="5" height="5" depth="2"> </a-box>
+
+  <script>
+    var btn2 = document.querySelector('#button2');
+    btn2.addEventListener('fusing', function(evt) { 
+      //evt.target.setAttribute('color', 'purple');
+      if (confirm("Do you wish to go back to the Main Room?") == true) {
+        location.replace('curve.html');
+      }
+    });
+  </script>
+  </body>
+  </html>
