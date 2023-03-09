@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Curve</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-entity camera position="0 0 0" look-controls wasd-controls>
+      <a-cursor fuse="true" fuseTimeout="500" ></a-cursor>
+    </a-entity>
+
+  <a-box id="front_wall"   material="src: walls2.jpg;  shader:  flat" position="0 7 -50" width="100" height="50" depth="5"> </a-box>
+  <a-box id="rear_wall"  material="src: walls2.jpg" position="0 7 50" width="100" height="50" depth="5"> </a-box>
+  <a-box id="right_wall"  material="src: walls2.jpg" position="50 7 0" width="2" height="50" depth="100"> </a-box>
+  <a-box id="left_wall"  material="src: walls2.jpg" position="-50 7 0" width="2" height="50" depth="100"> </a-box>
+  <a-box id="bottom_wall"  material="src: tiles7.jpg; shader:  flat" position="0 -20 0" width="100" height="5" depth="100"> </a-box>
+
+  <a-box id="button1"  material="color: red" position="-24.3 -6 -47.5" width="5" height="7" depth="2"> </a-box>
+  <a-box id="button2"  material="color: red" position="-16.4 -6 -47.5" width="5" height="7" depth="2"> </a-box>
+  <a-box id="button3"  material="color: red" position="-8.1 -6 -47.5" width="5" height="7" depth="2"> </a-box>
+  <a-box id="button4"  material="color: red" position="0.2 -6 -47.5" width="5" height="7" depth="2"> </a-box>
+  <a-box id="button5"  material="color: red" position="8.4 -6 -47.5" width="5" height="7" depth="2"> </a-box>
+  <a-box id="button6"  material="color: red" position="16.5 -6 -47.5" width="5" height="7" depth="2"> </a-box>
+  <a-box id="button7"  material="color: red" position="24.7 -6 -47.5" width="5" height="7" depth="2"> </a-box>
+
+  <a-plane id="poster1" src="body1.jpg" height="30" width="60" rotation="0 0 0" position="0 0 -47"></a-plane>
