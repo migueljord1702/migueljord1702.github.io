@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>mezzanine</title>
+  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-extras@5.0.0/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@3.3.0/dist/aframe-physics-system.min.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-animation-component@5.1.2/dist/aframe-animation-component.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/aframe-gif-shader@0.2.0/dist/aframe-gif-shader.js"></script> -->
+</head>
+<body>
+<a-scene> 
+<!-- AVATAR -->
+<a-entity id="user" position= "25 0 100" movement-controls="speed: 1;" kinematic-body="enableJumps: true;" jump-ability="distance: 0.5;" tracker>
+    <a-entity camera="far: 1000;" wasd-controls="enabled: false;" look-controls="pointerLockEnabled: true;" position="0 3 0">
+        <a-cursor fuse="false"></a-cursor>
+    </a-entity>
+
+</a-entity>
+<a-entity camera position="0 0 0" look-controls wasd-controls>
+  <a-cursor fuse="true" fuseTimeout="500" ></a-cursor>
+   
+</a-entity>
+
+          <a-entity id="floor1" geometry="primitive: box; width: 100; depth: 234; height: 5;"
+          material="src: floor1.jpg"
+          position="0 -0.5 0" static-body></a-entity>
+
+          <a-entity id="floor2" geometry="primitive: box; width: 90; depth: 102; height: 5;"
+          material="src: floor1.jpg"
+          position="95 -0.5 -66" static-body></a-entity>
+
+      </a-entity>
+      
+<a-box id="top_wall" material="src: roof1.jpg" position="45 12.5 0" width="190" height="1" depth="234" static-body> </a-box>
+
+<a-box id="right_wall1" material="src: walls3.jpg" position="35 7.25 80" width="2" height="10.5" depth="74" static-body> </a-box>
+<a-box id="right_wall2" material="src: walls5.jpg" position="49 7.25 28.5" width="2" height="10.5" depth="27" static-body> </a-box>
+<a-box id="right_wall3" material="src: walls6.jpeg" position="35 7.25 0" width="2" height="10.5" depth="30" static-body> </a-box>
+<a-box id="right_wall4" material="src: walls4.jpeg" position="42 7.25 42" width="16" height="10.5" depth="2" static-body> </a-box>
+<a-box id="right_wall5" material="src: walls7.jpeg" position="42 7.25 15" width="16" height="10.5" depth="2" static-body> </a-box>
+
+<a-box id="decor_wall1" material="src: decor1.jpeg; opacity: 0.75" position="15 7.75 99" width="2" height="9.5" depth="34" static-body> </a-box>
+<a-box id="decor_wall2" material="src: decor1.jpeg; opacity: 0.75" position="-11 7.75 116" width="54" height="9.5" depth="2" static-body> </a-box>
+<a-box id="decor_wall3" material="src: plaster1.jpeg" position="-44 7.75 116" width="12" height="9.5" depth="2" static-body> </a-box>
+
+<a-box id="lounge_floor1" material="src: floor2.jpg" position="-17 2.5 99.5" rotation="0 0 0" width="66" height="1" depth="35" static-body> </a-box>
+<a-box id="lounge_floor2" material="src: floor2.jpg" position="-12.15 2.5 53.25" rotation="0 30 0" width="20" height="1" depth="78" static-body> </a-box>
+<a-box id="lounge_floor3" material="src: floor2.jpg" position="-28.5 2.5 62" rotation="0 0 0" width="43" height="1" depth="40" static-body> </a-box>
+<a-box id="lounge_floor4" material="src: floor2.jpg" position="-36.5 2.5 28.5" rotation="0 0 0" width="27" height="1" depth="28" static-body> </a-box>
+<a-box id="lounge_wall1" material="src: plaster1.jpeg" position="-36.5 7.25 13.5" rotation="0 0 0" width="27" height="10.5" depth="2" static-body> </a-box>
+<a-box id="lounge_wall2" material="src: walls8.jpg" position="-3.45 7.25 8.75" rotation="0 15 0" width="41" height="10.5" depth="1" static-body> </a-box>
+<a-box id="lounge_wall3" material="src: plaster1.jpeg" position="-3.45 7.25 7.75" rotation="0 15 0" width="41" height="10.5" depth="1" static-body> </a-box>
+
+<a-box id="library_wall1" material="color: white; opacity: 0.5" position="-17 7.25 -49" rotation="0 0 0" width="66" height="10.5" depth="1" static-body> </a-box>
+<a-box id="library_wall2" material="src: walls1.jpeg" position="-17 7.25 -50" rotation="0 0 0" width="66" height="10.5" depth="1" static-body> </a-box>
+<a-box id="library_wall3" material="src: plaster1.jpeg" position="15.6 7.25 -0.6" rotation="0 0 0" width="2" height="10.5" depth="9" static-body> </a-box>
+<a-box id="library_wall4" material="src: walls2.jpg; opacity:0.9" position="16.1 7.25 -20" rotation="0 0 0" width="1" height="10.5" depth="15" static-body> </a-box>
+<a-box id="library_floor1" material="src: floor2.jpg" position="-35.35 2.5 -3.55" rotation="0 30 0" width="5" height="1" depth="40" static-body> </a-box>
+<a-box id="library_floor2" material="src: floor2.jpg" position="-46.5 2.5 -4.5" rotation="0 0 0" width="7" height="1" depth="35" static-body> </a-box>
+<a-box id="library_floor3" material="src: floor2.jpg" position="-40.5 2.5 0.5" rotation="0 0 0" width="5" height="1" depth="25" static-body> </a-box>
+<a-box id="library_floor4" material="src: floor2.jpg" position="-35.5 2.5 5" rotation="0 0 0" width="5" height="1" depth="17" static-body> </a-box>
+<a-box id="library_floor5" material="src: floor2.jpg" position="-30.5 2.5 10" rotation="0 0 0" width="5" height="1" depth="10" static-body> </a-box>
+<a-box id="library_pillar1" material="src: plaster1.jpeg" position="-46.5 7.25 -25.5" rotation="0 0 0" width="7" height="10.5" depth="7" static-body> </a-box>
+
+<a-box id="sewing_wall1" material="src: walls1.jpeg" position="15 7.25 -91" width="2" height="10.5" depth="50"> </a-box>
+
+<a-box id="left_wall1" material="color: white; opacity: 0.5" position="-49 7.25 0" width="2" height="10.5" depth="234" static-body> </a-box>
+<a-box id="left_wall1" material="src: view1.jpg" position="-51 7.25 0" width="2" height="10.5" depth="236" static-body> </a-box>
+<a-box id="front_wall1_glass" material="color: white; opacity: 0.5" position="36 7.25 -116" width="172" height="10.5" depth="2" static-body> </a-box>
+<a-box id="front_wall1" material="src: view3.jpeg" position="45 7.25 -118" width="190" height="10.5" depth="2" static-body> </a-box>
+<a-box id="bathroom_wall1" material="src: walls9.jpg" position="59 7.25 -16" width="50" height="10.5" depth="2" static-body> </a-box>
+<a-box id="rear_wall1" material="src: view2.jpeg" position="115 7.25 -14" width="51" height="10.5" depth="2" static-body> </a-box>
+<a-box id="rear_wall2" material="src: view2.jpeg" position="140 7.25 -66" width="2" height="10.5" depth="102" static-body> </a-box>
+<a-box id="right_wall1" material="src: walls11.jpg" position="0 7.25 118" width="100" height="10.5" depth="2" static-body> </a-box>
+
+<a-box id="class_right1" material="src: walls10.jpeg" position="88.5 7.25 -16" rotation="0 90 0" width="2" height="10.5" depth="9"static-body> </a-box>
+<a-box id="class_right2" material="color: white; opacity: 0.5" position="97.6 7.25 -17.19" rotation="0 105 0" width="2" height="10.5" depth="9" static-body> </a-box>
+<a-box id="class_right3" material="color: white; opacity: 0.5" position="106.05 7.25 -20.68" rotation="0 120 0" width="2" height="10.5" depth="9" static-body> </a-box>
+<a-box id="class_right4" material="color: white; opacity: 0.5" position="113.31 7.25 -26.24" rotation="0 135 0" width="2" height="10.5" depth="9" static-body> </a-box>
+<a-box id="class_right5" material="color: white; opacity: 0.5" position="118.53 7.25 -32.88" rotation="0 150 0" width="2" height="10.5" depth="9" static-body> </a-box>
+<a-box id="class_right6" material="color: white; opacity: 0.5" position="121.96 7.25 -41.04" rotation="0 165 0" width="2" height="10.5" depth="9" static-body> </a-box>
+<a-box id="class_right7" material="color: white; opacity: 0.5" position="123.16 7.25 -61.355" rotation="0 0 0" width="2" height="10.5" depth="50" static-body> </a-box>
+
+<a-box id="class_left2" material="color: white; opacity: 0.5" position="97.6 7.25 -114.81" rotation="0 75 0" width="2" height="10.5" depth="9" static-body> </a-box>
+<a-box id="class_left3" material="color: white; opacity: 0.5" position="106.05 7.25 -111.32" rotation="0 60 0" width="2" height="10.5" depth="9" static-body> </a-box>
+<a-box id="class_left4" material="color: white; opacity: 0.5" position="113.31 7.25 -105.76" rotation="0 45 0" width="2" height="10.5" depth="9" static-body> </a-box>
+<a-box id="class_left5" material="color: white; opacity: 0.5" position="118.53 7.25 -99.12" rotation="0 30 0" width="2" height="10.5" depth="9" static-body> </a-box>
+<a-box id="class_left6" material="color: white; opacity: 0.5" position="121.96 7.25 -90.96" rotation="0 15 0" width="2" height="10.5" depth="9" static-body> </a-box>
+
+<a-box id="class_divider1" material="src: walls1.jpeg" position="84 7.25 -93" width="2" height="10.5" depth="44"> </a-box>
+<a-box id="class_divider2" material="src: walls1.jpeg" position="84 7.25 -38" width="2" height="10.5" depth="44"> </a-box>
+<a-box id="class_divider3" material="src: walls1.jpeg" position="105.16 7.25 -64" width="34" height="10.5" depth="2"> </a-box>
+<a-box id="class_divider4" material="src: walls1.jpeg" position="49.5 7.25 -76" width="57" height="10.5" depth="2"> </a-box>
+
+<a-box id="class_floor1" material="src: floor3.jpg" position="49.5 2.5 -97" width="67" height="1" depth="40" static-body> </a-box>
+
+</a-scene>
+
+<script>
+    const scene = AFRAME.scenes[0] // or use document.querySelector('a-scene')
+    scene.systems.physics.driver.world.gravity.y = -1; // set vertical gravity
+    // console.log(scene.systems.physics.driver.world.gravity)
+</script>
+
+</body>
+</html>
