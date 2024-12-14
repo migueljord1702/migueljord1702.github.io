@@ -96,13 +96,4 @@
 
 <a-box id="class_floor1" material="src: floor3.jpg" position="49.5 2.5 -97" width="67" height="1" depth="40" static-body> </a-box>
 
-</a-scene>
-
-<script>
-    const scene = AFRAME.scenes[0] // or use document.querySelector('a-scene')
-    scene.systems.physics.driver.world.gravity.y = -1; // set vertical gravity
-    // console.log(scene.systems.physics.driver.world.gravity)
-</script>
-
-</body>
-</html>
+<a-entity id="sas_desk" gltf-model="sas/scene.gltf" position="0 0 0" scale="100 100 100" static-body> </a-entity>
