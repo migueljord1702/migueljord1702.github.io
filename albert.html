@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>albert</title>
+  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-extras@5.0.0/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@3.3.0/dist/aframe-physics-system.min.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-animation-component@5.1.2/dist/aframe-animation-component.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/aframe-gif-shader@0.2.0/dist/aframe-gif-shader.js"></script> -->
+</head>
+<body>
+<a-scene> 
+<!-- AVATAR -->
+<a-entity id="user" position="0 0 0" movement-controls="speed: 1;" kinematic-body="enableJumps: true;" jump-ability="distance: 0.5;" tracker>
+    <a-entity camera="far: 1000;" wasd-controls="enabled: false;" look-controls="pointerLockEnabled: true;" position="0 3 0">
+        <a-cursor fuse="false"></a-cursor>
+    </a-entity>
+
+
+<!-- STAGE -->
+ 
+</a-entity>
+  <a-entity camera position="0 0 0" look-controls wasd-controls>
+    <a-cursor fuse="true" fuseTimeout="500" ></a-cursor>
+  </a-entity>
+
+            <a-entity id="floor" geometry="primitive: box; width: 50; depth: 50; height: 5;"
+            colour="green"
+            position="0 -1 0" static-body></a-entity>
+        </a-entity>
+
+  <a-box id="front_wall" material="src: albert7.jpg;  shader:  flat" position="0 16 25" width="50" height="50" depth="2" static-body> </a-box>
+  <a-box id="rear_wall" material="src: albert2.jpg" position="0 16 -25" width="50" height="50" depth="2" static-body> </a-box>
+  <a-box id="left_wall" material="src: albert3.jpg" position="-25 16 0" width="2" height="50" depth="50" static-body> </a-box>
+  <a-box id="right_wall" material="src: albert4.jpg" position="25 16 0" width="2" height="50" depth="50" static-body> </a-box>
+  <a-box id="roof" material="src: albert5.jpg" position="0 40 0" width="50" height="5" depth="50" static-body> </a-box>
+
+</a-scene>
+
+<script>
+    const scene = AFRAME.scenes[0] // or use document.querySelector('a-scene')
+    scene.systems.physics.driver.world.gravity.y = -1; // set vertical gravity
+    // console.log(scene.systems.physics.driver.world.gravity)
+</script>
+
+</body>
+</html>
